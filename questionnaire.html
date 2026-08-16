@@ -8,18 +8,23 @@
 </head>
 <body>
   <main class="container">
-    <h1>Questionnaire</h1>
+    <h1>Questionnaire — Trouve ton domaine</h1>
+    <p>Consigne : Pour chaque affirmation, choisis la réponse qui te correspond le mieux.</p>
+    <p>A — Beaucoup / Très souvent &nbsp;&nbsp; B — Un peu / Parfois &nbsp;&nbsp; C — Pas vraiment / Rarement</p>
+
     <div id="questions"></div>
 
     <div class="actions">
-      <button id="submit-btn" class="btn">Terminer (les réponses ne sont pas envoyées)</button>
+      <button id="submit-btn" class="btn">Terminer</button>
       <button id="export-btn" class="btn ghost">Télécharger mes réponses (JSON)</button>
       <a class="btn ghost" href="index.html">Retour</a>
     </div>
 
     <div id="thanks" class="hidden">
-      <h2>Merci !</h2>
-      <p>Tes réponses sont restées sur ton appareil. Tu peux les télécharger si tu veux.</p>
+      <h2>🎉 TON RÉSULTAT EST PRÊT !</h2>
+      <p>Après analyse de tes réponses, une tendance majoritaire ressort de ton profil.</p>
+      <p><strong>🔐 TON CODE RÉSULTAT :</strong> <span id="result-code" style="font-size:1.6em; letter-spacing:4px;"></span></p>
+      <p>Merci de bien vouloir enregistrer ou noter soigneusement ce résultat. La révélation des domaines sera publiée ultérieurement. Garde précieusement ton code jusqu'à la révélation officielle ! 👀</p>
     </div>
   </main>
 
@@ -30,7 +35,13 @@
       App.renderQuestionnaire('questions', questions);
 
       document.getElementById('submit-btn').addEventListener('click', () => {
+        const answers = App.collectAnswers('questions');
+        const code = App.computeResult(answers);
+        // show result code
+        document.getElementById('result-code').textContent = code || 'N/A';
         document.getElementById('thanks').classList.remove('hidden');
+        // optionally scroll to result
+        document.getElementById('thanks').scrollIntoView({behavior: 'smooth'});
       });
 
       document.getElementById('export-btn').addEventListener('click', () => {

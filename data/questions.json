@@ -1,23 +1,222 @@
 [
   {
     "id": "q1",
-    "type": "text",
-    "label": "Ton nom",
-    "placeholder": "Ex. Marie Dupont",
-    "required": false
+    "type": "radio",
+    "label": "Lorsque plusieurs tâches arrivent en même temps, je parviens à rester organisé(e).",
+    "options": [
+      "A — Très souvent",
+      "B — Parfois",
+      "C — Difficilement"
+    ],
+    "required": true
   },
   {
     "id": "q2",
     "type": "radio",
-    "label": "As‑tu aimé l'événement ?",
-    "options": ["Oui", "Non", "Un peu"],
+    "label": "J’aime être en contact avec des personnes différentes au cours d’une journée.",
+    "options": [
+      "A — Beaucoup",
+      "B — Un peu",
+      "C — Pas vraiment"
+    ],
     "required": true
   },
   {
     "id": "q3",
-    "type": "textarea",
-    "label": "Commentaires (facultatif)",
-    "placeholder": "Ton avis",
-    "required": false
+    "type": "radio",
+    "label": "J’aime réaliser une préparation de A à Z et voir le résultat concret de mon travail.",
+    "options": [
+      "A — Beaucoup",
+      "B — Un peu",
+      "C — Pas vraiment"
+    ],
+    "required": true
+  },
+  {
+    "id": "q4",
+    "type": "radio",
+    "label": "Je suis patient(e) lorsqu’une préparation demande du temps et de la précision.",
+    "options": [
+      "A — Oui, beaucoup",
+      "B — Ça dépend",
+      "C — Pas vraiment"
+    ],
+    "required": true
+  },
+  {
+    "id": "q5",
+    "type": "radio",
+    "label": "Je suis à l’aise lorsqu’il faut m’adapter à un lieu ou à une prestation différente.",
+    "options": [
+      "A — Très à l’aise",
+      "B — Plutôt à l’aise",
+      "C — Pas vraiment"
+    ],
+    "required": true
+  },
+  {
+    "id": "q6",
+    "type": "radio",
+    "label": "Le contact avec les clients et la qualité de l’accueil sont importants pour moi.",
+    "options": [
+      "A — Très importants",
+      "B — Assez importants",
+      "C — Peu importants"
+    ],
+    "required": true
+  },
+  {
+    "id": "q7",
+    "type": "radio",
+    "label": "J’aime travailler avec des produits, des techniques et des cuissons.",
+    "options": [
+      "A — Beaucoup",
+      "B — Un peu",
+      "C — Pas vraiment"
+    ],
+    "required": true
+  },
+  {
+    "id": "q8",
+    "type": "radio",
+    "label": "Je fais attention aux petits détails dans une préparation ou une présentation.",
+    "options": [
+      "A — Beaucoup",
+      "B — Parfois",
+      "C — Rarement"
+    ],
+    "required": true
+  },
+  {
+    "id": "q9",
+    "type": "radio",
+    "label": "Je suis capable de rester efficace lorsque le rythme de travail devient intense.",
+    "options": [
+      "A — Oui",
+      "B — Ça dépend",
+      "C — J’ai du mal"
+    ],
+    "required": true
+  },
+  {
+    "id": "q10",
+    "type": "radio",
+    "label": "J’aime préparer plusieurs éléments différents pour une même prestation.",
+    "options": [
+      "A — Beaucoup",
+      "B — Un peu",
+      "C — Pas vraiment"
+    ],
+    "required": true
+  },
+  {
+    "id": "q11",
+    "type": "radio",
+    "label": "Je préfère chercher rapidement une solution lorsqu’un problème apparaît.",
+    "options": [
+      "A — Oui",
+      "B — Parfois",
+      "C — Non"
+    ],
+    "required": true
+  },
+  {
+    "id": "q12",
+    "type": "radio",
+    "label": "Je peux répéter un geste technique plusieurs fois jusqu’à le maîtriser.",
+    "options": [
+      "A — Oui, volontiers",
+      "B — Si nécessaire",
+      "C — Je préfère varier"
+    ],
+    "required": true
+  },
+  {
+    "id": "q13",
+    "type": "radio",
+    "label": "J’aime travailler en équipe et coordonner mes tâches avec celles des autres.",
+    "options": [
+      "A — Beaucoup",
+      "B — Un peu",
+      "C — Pas vraiment"
+    ],
+    "required": true
+  },
+  {
+    "id": "q14",
+    "type": "radio",
+    "label": "J’aime imaginer de nouvelles recettes, associations ou présentations.",
+    "options": [
+      "A — Beaucoup",
+      "B — Un peu",
+      "C — Pas vraiment"
+    ],
+    "required": true
+  },
+  {
+    "id": "q15",
+    "type": "radio",
+    "label": "Je suis à l’aise lorsque les priorités ou les consignes peuvent changer au cours de la journée.",
+    "options": [
+      "A — Oui",
+      "B — Plutôt",
+      "C — Difficilement"
+    ],
+    "required": true
+  },
+  {
+    "id": "q16",
+    "type": "radio",
+    "label": "Je préfère un travail où la régularité et la précision sont très importantes.",
+    "options": [
+      "A — Oui",
+      "B — Ça dépend",
+      "C — Pas vraiment"
+    ],
+    "required": true
+  },
+  {
+    "id": "q17",
+    "type": "radio",
+    "label": "Je serais à l’aise pour préparer une prestation destinée à plusieurs personnes.",
+    "options": [
+      "A — Oui",
+      "B — Peut-être",
+      "C — Pas vraiment"
+    ],
+    "required": true
+  },
+  {
+    "id": "q18",
+    "type": "radio",
+    "label": "Je prends facilement la parole pour accueillir, expliquer ou renseigner quelqu’un.",
+    "options": [
+      "A — Oui",
+      "B — Parfois",
+      "C — Pas vraiment"
+    ],
+    "required": true
+  },
+  {
+    "id": "q19",
+    "type": "radio",
+    "label": "Je préfère maîtriser correctement une technique avant de chercher à aller plus vite.",
+    "options": [
+      "A — Oui",
+      "B — Ça dépend",
+      "C — Non"
+    ],
+    "required": true
+  },
+  {
+    "id": "q20",
+    "type": "radio",
+    "label": "J’aime quand mon travail peut s’adapter à un événement, un lieu ou une demande particulière.",
+    "options": [
+      "A — Beaucoup",
+      "B — Un peu",
+      "C — Pas vraiment"
+    ],
+    "required": true
   }
 ]

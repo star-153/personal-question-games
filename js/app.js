@@ -9,20 +9,6 @@ window.App = (function(){
       "label": "Ton nom",
       "placeholder": "Ex. Marie Dupont",
       "required": false
-    },
-    {
-      "id": "q2",
-      "type": "radio",
-      "label": "As‑tu aimé l'événement ?",
-      "options": ["Oui", "Non", "Un peu"],
-      "required": true
-    },
-    {
-      "id": "q3",
-      "type": "textarea",
-      "label": "Commentaires (facultatif)",
-      "placeholder": "Ton avis",
-      "required": false
     }
   ];
 
@@ -111,8 +97,7 @@ window.App = (function(){
 
   function collectAnswers(containerId){
     const answers = {};
-    const all = document.querySelectorAll('#' + containerId + ' .question, #' + containerId + ' [id]');
-    // use questions from DOM by reading inputs/radios
+    // collect inputs and textareas
     document.querySelectorAll('#' + containerId + ' input, #' + containerId + ' textarea').forEach(el => {
       if(el.type === 'radio'){
         if(el.checked){
@@ -128,10 +113,28 @@ window.App = (function(){
     return answers;
   }
 
+  function computeResult(answers){
+    const counts = {A:0,B:0,C:0};
+    Object.values(answers).forEach(v => {
+      if(typeof v === 'string' && v.trim()){
+        const ch = v.trim().charAt(0).toUpperCase();
+        if(ch === 'A' || ch === 'B' || ch === 'C') counts[ch]++;
+      }
+    });
+    // choose max (tie-breaker A > B > C)
+    let max = 'A';
+    let maxv = counts['A'];
+    ['B','C'].forEach(k => { if(counts[k] > maxv){ max = k; maxv = counts[k]; } });
+    // if no answers, return empty
+    if(maxv === 0) return '';
+    return max;
+  }
+
   return {
     loadQuestions,
     saveQuestionsLocal,
     renderQuestionnaire,
-    collectAnswers
+    collectAnswers,
+    computeResult
   };
 })();

@@ -1,6 +1,10 @@
 // app.js — logique commune
 window.App = (function(){
   const LOCAL_KEY = 'questions';
+  // CountAPI namespace/key (public, no auth)
+  const COUNT_NAMESPACE = 'star-153-personal-question-games';
+  const COUNT_KEY = 'completions';
+
   // defaultQuestions duplicated for safety if fetch fails
   const defaultQuestions = [
     {
@@ -114,20 +118,43 @@ window.App = (function(){
   }
 
   function computeResult(answers){
-    const counts = {A:0,B:0,C:0};
+    const counts = {A:0,B:0,C:0,D:0};
     Object.values(answers).forEach(v => {
       if(typeof v === 'string' && v.trim()){
         const ch = v.trim().charAt(0).toUpperCase();
-        if(ch === 'A' || ch === 'B' || ch === 'C') counts[ch]++;
+        if(ch === 'A' || ch === 'B' || ch === 'C' || ch === 'D') counts[ch]++;
       }
     });
-    // choose max (tie-breaker A > B > C)
-    let max = 'A';
-    let maxv = counts['A'];
-    ['B','C'].forEach(k => { if(counts[k] > maxv){ max = k; maxv = counts[k]; } });
-    // if no answers, return empty
-    if(maxv === 0) return '';
-    return max;
+    // choose max with tie-breaker A > B > C > D
+    let order = ['A','B','C','D'];
+    let best = order[0];
+    let bestv = counts[best];
+    order.slice(1).forEach(k => { if(counts[k] > bestv){ best = k; bestv = counts[k]; } });
+    if(bestv === 0) return '';
+    return best;
+  }
+
+  // CountAPI helpers (https://countapi.xyz)
+  async function fetchCompletionCount(){
+    try{
+      const r = await fetch(`https://api.countapi.xyz/get/${COUNT_NAMESPACE}/${COUNT_KEY}`);
+      if(r.ok){
+        const j = await r.json();
+        return Number(j.value) || 0;
+      }
+    }catch(e){ console.warn('fetch count failed', e); }
+    return 0;
+  }
+
+  async function incrementCompletionCount(){
+    try{
+      const r = await fetch(`https://api.countapi.xyz/hit/${COUNT_NAMESPACE}/${COUNT_KEY}`);
+      if(r.ok){
+        const j = await r.json();
+        return Number(j.value) || 0;
+      }
+    }catch(e){ console.warn('increment count failed', e); }
+    return null;
   }
 
   return {
@@ -135,6 +162,8 @@ window.App = (function(){
     saveQuestionsLocal,
     renderQuestionnaire,
     collectAnswers,
-    computeResult
+    computeResult,
+    fetchCompletionCount,
+    incrementCompletionCount
   };
 })();

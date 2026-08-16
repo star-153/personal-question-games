@@ -27,6 +27,7 @@
       <h2>🎉 Ton résultat est prêt !</h2>
       <p>Après analyse de tes réponses, une lettre ressort majoritairement de ton profil.</p>
       <p class="result-code">🔐 Ta lettre : <span id="result-code" class="big-letter"></span></p>
+      <p id="completion-stat" class="muted"></p>
       <p class="warning">⚠️ Cette lettre ne constitue ni un diagnostic, ni une décision concernant ton avenir professionnel. Merci de conserver précieusement ta lettre : sa signification sera révélée ultérieurement.</p>
       <p>📸 Pense à faire une capture d'écran ou à noter ton résultat.</p>
     </div>
@@ -38,12 +39,21 @@
       const questions = await App.loadQuestions();
       App.renderQuestionnaire('questions', questions);
 
-      document.getElementById('submit-btn').addEventListener('click', () => {
+      document.getElementById('submit-btn').addEventListener('click', async () => {
         const answers = App.collectAnswers('questions');
         const code = App.computeResult(answers);
         document.getElementById('result-code').textContent = code || 'N/A';
         document.getElementById('thanks').classList.remove('hidden');
         document.getElementById('thanks').scrollIntoView({behavior: 'smooth'});
+
+        try{
+          // incrémente le compteur global de complétions
+          const newCount = await App.incrementCompletionCount();
+          const statEl = document.getElementById('completion-stat');
+          if(typeof newCount === 'number'){
+            statEl.textContent = `Nombre total de participations complètes : ${newCount}`;
+          }
+        }catch(e){ console.warn('count increment failed', e); }
       });
 
       document.getElementById('export-btn').addEventListener('click', () => {

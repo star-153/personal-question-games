@@ -17,11 +17,24 @@
       </p>
 
       <p class="note">Les réponses restent sur l'appareil. Tu peux les télécharger à la fin.</p>
+      <p class="stat" id="completion-line">Chargement du nombre de participations…</p>
     </div>
   </main>
 
+  <script src="js/app.js"></script>
   <script>
-    // Page volontairement simple (plus de QR sur l'accueil).
+    // affiche le nombre de complétions sur la page d'accueil
+    (async function(){
+      try{
+        const n = await App.fetchCompletionCount();
+        const el = document.getElementById('completion-line');
+        if(typeof n === 'number'){
+          el.textContent = `Déjà ${n} personne${n>1?'s':''} ont complété le questionnaire.`;
+        } else {
+          el.textContent = '';
+        }
+      }catch(e){ console.warn(e); }
+    })();
   </script>
 </body>
 </html>

@@ -2,221 +2,141 @@
   {
     "id": "q1",
     "type": "radio",
-    "label": "Lorsque plusieurs tâches arrivent en même temps, je parviens à rester organisé(e).",
-    "options": [
-      "A — Très souvent",
-      "B — Parfois",
-      "C — Difficilement"
-    ],
+    "label": "Quand plusieurs choses doivent être faites en même temps, tu…",
+    "options": ["A — Commences par ce qui semble le plus important","B — Te concentres sur une chose à la fois","C — Cherches une autre manière de procéder","D — Organises les différentes tâches avant de commencer"],
     "required": true
   },
   {
     "id": "q2",
     "type": "radio",
-    "label": "J’aime être en contact avec des personnes différentes au cours d’une journée.",
-    "options": [
-      "A — Beaucoup",
-      "B — Un peu",
-      "C — Pas vraiment"
-    ],
+    "label": "Quand tu apprends une nouvelle technique, tu…",
+    "options": ["A — Regardes comment elle est réalisée avant d'essayer","B — La pratiques plusieurs fois pour la maîtriser","C — Cherches différentes façons de l'utiliser","D — Essaies de comprendre toutes les étapes"],
     "required": true
   },
   {
     "id": "q3",
     "type": "radio",
-    "label": "J’aime réaliser une préparation de A à Z et voir le résultat concret de mon travail.",
-    "options": [
-      "A — Beaucoup",
-      "B — Un peu",
-      "C — Pas vraiment"
-    ],
+    "label": "Dans un travail en équipe, tu…",
+    "options": ["A — Veilles à ce que chacun puisse communiquer","B — Te concentres principalement sur ta mission","C — Proposes des idées lorsque c'est nécessaire","D — Aides à organiser le travail du groupe"],
     "required": true
   },
   {
     "id": "q4",
     "type": "radio",
-    "label": "Je suis patient(e) lorsqu’une préparation demande du temps et de la précision.",
-    "options": [
-      "A — Oui, beaucoup",
-      "B — Ça dépend",
-      "C — Pas vraiment"
-    ],
+    "label": "Lorsqu'un imprévu arrive, tu…",
+    "options": ["A — Réagis rapidement","B — Cherches à comprendre ce qui s'est passé","C — Imagines une autre solution","D — Modifies ce qui était prévu"],
     "required": true
   },
   {
     "id": "q5",
     "type": "radio",
-    "label": "Je suis à l’aise lorsqu’il faut m’adapter à un lieu ou à une prestation différente.",
-    "options": [
-      "A — Très à l’aise",
-      "B — Plutôt à l’aise",
-      "C — Pas vraiment"
-    ],
+    "label": "Parmi ces qualités, laquelle te correspond le plus ?",
+    "options": ["A — Adaptabilité","B — Précision","C — Créativité","D — Organisation"],
     "required": true
   },
   {
     "id": "q6",
     "type": "radio",
-    "label": "Le contact avec les clients et la qualité de l’accueil sont importants pour moi.",
-    "options": [
-      "A — Très importants",
-      "B — Assez importants",
-      "C — Peu importants"
-    ],
+    "label": "Pour réaliser correctement une tâche, tu préfères…",
+    "options": ["A — Pouvoir t'adapter aux circonstances","B — Prendre le temps de bien la réaliser","C — Avoir une certaine liberté dans ta façon de faire","D — Préparer les différentes étapes"],
     "required": true
   },
   {
     "id": "q7",
     "type": "radio",
-    "label": "J’aime travailler avec des produits, des techniques et des cuissons.",
-    "options": [
-      "A — Beaucoup",
-      "B — Un peu",
-      "C — Pas vraiment"
-    ],
+    "label": "Lorsqu'on te donne une nouvelle consigne, tu…",
+    "options": ["A — Demandes des précisions si nécessaire","B — Fais attention à l'appliquer exactement","C — Réfléchis à la manière dont tu pourrais l'améliorer","D — La découpes en plusieurs étapes"],
     "required": true
   },
   {
     "id": "q8",
     "type": "radio",
-    "label": "Je fais attention aux petits détails dans une préparation ou une présentation.",
-    "options": [
-      "A — Beaucoup",
-      "B — Parfois",
-      "C — Rarement"
-    ],
+    "label": "Tu préfères une activité qui demande…",
+    "options": ["A — De réagir à différentes situations","B — De la concentration et de la minutie","C — De l'imagination","D — De la méthode"],
     "required": true
   },
   {
     "id": "q9",
     "type": "radio",
-    "label": "Je suis capable de rester efficace lorsque le rythme de travail devient intense.",
-    "options": [
-      "A — Oui",
-      "B — Ça dépend",
-      "C — J’ai du mal"
-    ],
+    "label": "Lorsque le rythme devient plus rapide, tu…",
+    "options": ["A — T'adaptes au changement de rythme","B — Restes concentré(e) sur la qualité","C — Cherches une manière plus efficace de travailler","D — Définis tes priorités"],
     "required": true
   },
   {
     "id": "q10",
     "type": "radio",
-    "label": "J’aime préparer plusieurs éléments différents pour une même prestation.",
-    "options": [
-      "A — Beaucoup",
-      "B — Un peu",
-      "C — Pas vraiment"
-    ],
+    "label": "Lorsque tu fais une erreur, tu…",
+    "options": ["A — Essaies de la corriger rapidement","B — Cherches précisément pourquoi elle s'est produite","C — Essaies une autre méthode","D — Modifies ton organisation pour éviter qu'elle se reproduise"],
     "required": true
   },
   {
     "id": "q11",
     "type": "radio",
-    "label": "Je préfère chercher rapidement une solution lorsqu’un problème apparaît.",
-    "options": [
-      "A — Oui",
-      "B — Parfois",
-      "C — Non"
-    ],
+    "label": "Dans un nouvel environnement, tu…",
+    "options": ["A — T'adaptes progressivement","B — Observes attentivement avant d'agir","C — Explores différentes possibilités","D — Cherches à comprendre comment tout fonctionne"],
     "required": true
   },
   {
     "id": "q12",
     "type": "radio",
-    "label": "Je peux répéter un geste technique plusieurs fois jusqu’à le maîtriser.",
-    "options": [
-      "A — Oui, volontiers",
-      "B — Si nécessaire",
-      "C — Je préfère varier"
-    ],
+    "label": "Tu apprécies particulièrement les tâches qui demandent…",
+    "options": ["A — De la réactivité","B — De la précision","C — De la créativité","D — De la préparation"],
     "required": true
   },
   {
     "id": "q13",
     "type": "radio",
-    "label": "J’aime travailler en équipe et coordonner mes tâches avec celles des autres.",
-    "options": [
-      "A — Beaucoup",
-      "B — Un peu",
-      "C — Pas vraiment"
-    ],
+    "label": "Avec une personne que tu connais peu, tu…",
+    "options": ["A — Vas facilement vers elle","B — Observes d'abord sa façon de travailler","C — Échanges volontiers des idées","D — Cherches à définir clairement les rôles"],
     "required": true
   },
   {
     "id": "q14",
     "type": "radio",
-    "label": "J’aime imaginer de nouvelles recettes, associations ou présentations.",
-    "options": [
-      "A — Beaucoup",
-      "B — Un peu",
-      "C — Pas vraiment"
-    ],
+    "label": "Pour toi, un travail bien réalisé doit être…",
+    "options": ["A — Adapté à la situation","B — Soigné et précis","C — Personnel et créatif","D — Bien préparé"],
     "required": true
   },
   {
     "id": "q15",
     "type": "radio",
-    "label": "Je suis à l’aise lorsque les priorités ou les consignes peuvent changer au cours de la journée.",
-    "options": [
-      "A — Oui",
-      "B — Plutôt",
-      "C — Difficilement"
-    ],
+    "label": "Lorsque tu dois recommencer une tâche, tu…",
+    "options": ["A — Cherches à la réaliser plus efficacement","B — Vérifies les détails qui pourraient poser problème","C — Essaies une nouvelle approche","D — Réfléchis à ce que tu pourrais mieux organiser"],
     "required": true
   },
   {
     "id": "q16",
     "type": "radio",
-    "label": "Je préfère un travail où la régularité et la précision sont très importantes.",
-    "options": [
-      "A — Oui",
-      "B — Ça dépend",
-      "C — Pas vraiment"
-    ],
+    "label": "Face à une journée imprévisible, tu…",
+    "options": ["A — T'adaptes au fur et à mesure","B — Essaies de conserver une méthode stable","C — Improvises lorsque cela est nécessaire","D — Réorganises ton programme"],
     "required": true
   },
   {
     "id": "q17",
     "type": "radio",
-    "label": "Je serais à l’aise pour préparer une prestation destinée à plusieurs personnes.",
-    "options": [
-      "A — Oui",
-      "B — Peut-être",
-      "C — Pas vraiment"
-    ],
+    "label": "Ce qui te satisfait le plus dans une activité est…",
+    "options": ["A — Pouvoir gérer différentes situations","B — Obtenir un résultat propre et réussi","C — Pouvoir créer quelque chose","D — Avoir tout correctement préparé"],
     "required": true
   },
   {
     "id": "q18",
     "type": "radio",
-    "label": "Je prends facilement la parole pour accueillir, expliquer ou renseigner quelqu’un.",
-    "options": [
-      "A — Oui",
-      "B — Parfois",
-      "C — Pas vraiment"
-    ],
+    "label": "Lorsque tu dois réaliser quelque chose de complexe, tu…",
+    "options": ["A — Commences et ajustes ensuite","B — Maîtrises chaque étape avant de continuer","C — Cherches une solution personnelle","D — Prépares un plan avant de commencer"],
     "required": true
   },
   {
     "id": "q19",
     "type": "radio",
-    "label": "Je préfère maîtriser correctement une technique avant de chercher à aller plus vite.",
-    "options": [
-      "A — Oui",
-      "B — Ça dépend",
-      "C — Non"
-    ],
+    "label": "Tu préfères un environnement où…",
+    "options": ["A — Les situations peuvent évoluer","B — Les techniques et la qualité sont importantes","C — Tu peux apporter tes propres idées","D — Les choses sont anticipées et organisées"],
     "required": true
   },
   {
     "id": "q20",
     "type": "radio",
-    "label": "J’aime quand mon travail peut s’adapter à un événement, un lieu ou une demande particulière.",
-    "options": [
-      "A — Beaucoup",
-      "B — Un peu",
-      "C — Pas vraiment"
-    ],
+    "label": "Quelle phrase te correspond le mieux ?",
+    "options": ["A — Je sais m'adapter lorsque les choses changent","B — J'aime prendre le temps de faire les choses correctement","C — J'aime trouver ma propre façon de faire","D — J'aime prévoir et organiser les choses"],
     "required": true
   }
 ]

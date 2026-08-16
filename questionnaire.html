@@ -3,14 +3,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Questionnaire</title>
+  <title>Questionnaire — Trouve ton domaine</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
   <main class="container">
-    <h1>Questionnaire — Trouve ton domaine</h1>
-    <p>Consigne : Pour chaque affirmation, choisis la réponse qui te correspond le mieux.</p>
-    <p>A — Beaucoup / Très souvent &nbsp;&nbsp; B — Un peu / Parfois &nbsp;&nbsp; C — Pas vraiment / Rarement</p>
+    <h1 class="page-title">🧭 Questionnaire — Découvre ton profil professionnel</h1>
+
+    <section class="intro">
+      <p><strong>Introduction</strong><br>
+      Bienvenue ! Ce questionnaire a pour objectif de mettre en évidence certaines de tes capacités, habitudes de travail et caractéristiques personnelles. Il n'y a pas de bonne ou de mauvaise réponse. Choisis simplement la réponse qui te correspond le mieux. Tes réponses permettront de faire ressortir un profil général et de donner un petit aperçu des domaines professionnels dans lesquels certaines de tes caractéristiques pourraient être utiles.</p>
+    </section>
 
     <div id="questions"></div>
 
@@ -20,11 +23,12 @@
       <a class="btn ghost" href="index.html">Retour</a>
     </div>
 
-    <div id="thanks" class="hidden">
-      <h2>🎉 TON RÉSULTAT EST PRÊT !</h2>
-      <p>Après analyse de tes réponses, une tendance majoritaire ressort de ton profil.</p>
-      <p><strong>🔐 TON CODE RÉSULTAT :</strong> <span id="result-code" style="font-size:1.6em; letter-spacing:4px;"></span></p>
-      <p>Merci de bien vouloir enregistrer ou noter soigneusement ce résultat. La révélation des domaines sera publiée ultérieurement. Garde précieusement ton code jusqu'à la révélation officielle ! 👀</p>
+    <div id="thanks" class="hidden result-card">
+      <h2>🎉 Ton résultat est prêt !</h2>
+      <p>Après analyse de tes réponses, une lettre ressort majoritairement de ton profil.</p>
+      <p class="result-code">🔐 Ta lettre : <span id="result-code" class="big-letter"></span></p>
+      <p class="warning">⚠️ Cette lettre ne constitue ni un diagnostic, ni une décision concernant ton avenir professionnel. Merci de conserver précieusement ta lettre : sa signification sera révélée ultérieurement.</p>
+      <p>📸 Pense à faire une capture d'écran ou à noter ton résultat.</p>
     </div>
   </main>
 
@@ -37,10 +41,8 @@
       document.getElementById('submit-btn').addEventListener('click', () => {
         const answers = App.collectAnswers('questions');
         const code = App.computeResult(answers);
-        // show result code
         document.getElementById('result-code').textContent = code || 'N/A';
         document.getElementById('thanks').classList.remove('hidden');
-        // optionally scroll to result
         document.getElementById('thanks').scrollIntoView({behavior: 'smooth'});
       });
 

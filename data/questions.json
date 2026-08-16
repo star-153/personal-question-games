@@ -1,0 +1,23 @@
+[
+  {
+    "id": "q1",
+    "type": "text",
+    "label": "Ton nom",
+    "placeholder": "Ex. Marie Dupont",
+    "required": false
+  },
+  {
+    "id": "q2",
+    "type": "radio",
+    "label": "As‑tu aimé l'événement ?",
+    "options": ["Oui", "Non", "Un peu"],
+    "required": true
+  },
+  {
+    "id": "q3",
+    "type": "textarea",
+    "label": "Commentaires (facultatif)",
+    "placeholder": "Ton avis",
+    "required": false
+  }
+]

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin — Modifier les questions</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Éditeur de questions (local)</h1>
+
+    <div id="login">
+      <label>Mot de passe admin :
+        <input id="pwd" type="password" placeholder="mot de passe" />
+      </label>
+      <button id="login-btn" class="btn">Se connecter</button>
+      <p class="hint">Mot de passe par défaut : <strong>admin123</strong> — change‑le dans js/app.js si tu veux.</p>
+    </div>
+
+    <div id="editor" class="hidden">
+      <p>Édite le JSON des questions ci‑dessous puis clique <strong>Enregistrer localement</strong>. Cela sauvegarde dans ton navigateur (localStorage) pour tester.</p>
+      <textarea id="questions-json" rows="16"></textarea>
+      <p class="editor-actions">
+        <button id="save-btn" class="btn">Enregistrer localement</button>
+        <button id="reset-btn" class="btn ghost">Réinitialiser au défaut</button>
+        <a class="btn ghost" href="index.html">Retour</a>
+      </p>
+      <p class="note">Pour que les modifications soient visibles par tout le monde, édite <code>data/questions.json</code> dans le repo et redéploie (voir instructions).</p>
+    </div>
+  </main>
+
+  <script src="js/app.js"></script>
+  <script>
+    const DEFAULT_PWD = 'admin123'; // change si tu veux (ou dans app.js)
+    document.getElementById('login-btn').addEventListener('click', async () => {
+      const val = document.getElementById('pwd').value;
+      if (val === DEFAULT_PWD) {
+        document.getElementById('login').classList.add('hidden');
+        document.getElementById('editor').classList.remove('hidden');
+        const q = await App.loadQuestions();
+        document.getElementById('questions-json').value = JSON.stringify(q, null, 2);
+      } else {
+        alert('Mot de passe incorrect.');
+      }
+    });
+
+    document.getElementById('save-btn').addEventListener('click', () => {
+      try {
+        const parsed = JSON.parse(document.getElementById('questions-json').value);
+        App.saveQuestionsLocal(parsed);
+        alert('Questions enregistrées localement (localStorage).');
+      } catch (e) {
+        alert('JSON invalide : ' + e.message);
+      }
+    });
+
+    document.getElementById('reset-btn').addEventListener('click', async () => {
+      if (!confirm('Réinitialiser aux questions par défaut ?')) return;
+      localStorage.removeItem('questions');
+      const q = await App.loadQuestions(true);
+      document.getElementById('questions-json').value = JSON.stringify(q, null, 2);
+      alert('Réinitialisé.');
+    });
+  </script>
+</body>
+</html>

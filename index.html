@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Questionnaire — Accueil</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Questionnaire</h1>
+    <p>Scannez le QR code ci‑dessous ou cliquez sur le bouton pour ouvrir le questionnaire.</p>
+
+    <div id="qrcode" class="qrcode"></div>
+
+    <p>
+      <a id="open-questionnaire" class="btn" href="questionnaire.html">Ouvrir le questionnaire</a>
+      <a id="open-admin" class="btn ghost" href="admin.html">Éditeur (admin)</a>
+    </p>
+
+    <section class="infos">
+      <h2>Notes</h2>
+      <ul>
+        <li>Les réponses ne sont pas enregistrées sur un serveur (option C).</li>
+        <li>Pour modifier les questions pour tous les visiteurs, édite le fichier <code>data/questions.json</code> dans le repo et redéploie.</li>
+        <li>L'éditeur admin modifie les questions localement (stockage dans ton navigateur) pour tester rapidement.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    // Génère le QR pointant vers questionnaire.html dans le même dossier.
+    (function(){
+      const target = new URL('questionnaire.html', location.href).href;
+      const qrcodeEl = document.getElementById('qrcode');
+      new QRCode(qrcodeEl, {
+        text: target,
+        width: 200,
+        height: 200
+      });
+      document.getElementById('open-questionnaire').href = target;
+      // admin link stays relative
+    })();
+  </script>
+</body>
+</html>
